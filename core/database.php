@@ -3,7 +3,7 @@
 class Database
 {
     protected $user = "root";
-    protected $password = "";
+    protected $password = "vk3897vk";
     protected $host = "localhost";
     protected $db = "test1";
     protected $charset = "utf8mb4";

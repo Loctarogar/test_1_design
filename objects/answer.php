@@ -28,19 +28,13 @@ class Answer
     }
 
     public function getAll(){
-        $query = "SELECT answer.answer_id, answer.name, answer.point, question.name, question.question_id 
-                  FROM answer 
-                  LEFT JOIN question 
-                  on question.question_id = answer.question_id
-                  ";
-
-        /**
-        $query = "SELECT answer.answer_id, answer.name, question.question_id, question.name
+        $query = "SELECT answer.answer_id, answer.name, question.question_id, question.name AS q_name
                   FROM ".$this->table."
                   LEFT JOIN question
                   ON question.question_id = answer.question_id
+                  ORDER BY question.question_id ASC
         ";
-         */
+
         $stmt = $this->db->prepare($query);
         $stmt->execute();
 
